@@ -1,2 +1,4 @@
-package com.example.vodionlinemoviewebsite.model;public class UserModel {
+package com.example.vodionlinemoviewebsite.model;
+
+public class UserModel {
 }

@@ -493,13 +493,14 @@
     </div>
 </header>
 <!-- ========== END HEADER ========== -->
+
     <script>
             $(document).on('ready', function () {
 
                 const username = document.cookie;
                 console.log(username);
                 const renderUserName = (item) => {
-                    $(".usernameCookie").text(item);
+                    $(".usernameCookie").text(item);     
 
                     $(".keyLogin").css({
                         display:"none"
@@ -519,12 +520,15 @@
 
                 }
                 renderUserName(username);
+            }
+        
 
-            });
-
-
-    </script>
+        });
+      </script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      
 </body>
 </html>
-
 

@@ -475,10 +475,10 @@
 
                                     <div id="basicDropdownHover" class="hs-unfold-content dropdown-menu my-account-dropdown">
                                         <!-- Modal Trigger -->
-                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#loginModal">Sign in</a>
-                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#signupModal">Register</a>
-                                        <a class="dropdown-item d-none" href="account">My Account</a>
-                                        <a class="dropdown-item d-none" href="" data-toggle="modal" data-target="">Log out</a>
+                                        <a class="dropdown-item keyLogin" href="javascript:;" data-toggle="modal" data-target="#loginModal">Sign in</a>
+                                        <a class="dropdown-item keySignup" href="javascript:;" data-toggle="modal" data-target="#signupModal">Register</a>
+                                        <a class="dropdown-item d-none font-weight-semi-bold usernameCookie keyUsername" href="account">My Account</a>
+                                        <a class="dropdown-item d-none keyLogout" href="" data-toggle="modal" data-target="">Log out</a>
                                         <!-- End Modal Trigger -->
                                     </div>
                                 </div>
@@ -495,3 +495,35 @@
 <!-- ========== END HEADER ========== -->
 </body>
 </html>
+
+<script>
+        $(document).on('ready', function () {
+
+            const username = document.cookie;
+            console.log(username);
+            const renderUserName = (item) => {
+                $(".usernameCookie").text(item);
+
+                $(".keyLogin").css({
+                    display:"none"
+                });
+
+                $(".keySignup").css({
+                    display:"none"
+                });
+
+                $(".keyUsername").css({
+                    display:"block"
+                });
+
+                $(".keyLogout").css({
+                    display:"block"
+                });
+
+            }
+            renderUserName(username);
+
+        });
+
+
+    </script>

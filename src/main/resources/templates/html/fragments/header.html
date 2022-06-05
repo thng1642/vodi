@@ -493,37 +493,38 @@
     </div>
 </header>
 <!-- ========== END HEADER ========== -->
-</body>
-</html>
+    <script>
+            $(document).on('ready', function () {
 
-<script>
-        $(document).on('ready', function () {
+                const username = document.cookie;
+                console.log(username);
+                const renderUserName = (item) => {
+                    $(".usernameCookie").text(item);
 
-            const username = document.cookie;
-            console.log(username);
-            const renderUserName = (item) => {
-                $(".usernameCookie").text(item);
+                    $(".keyLogin").css({
+                        display:"none"
+                    });
 
-                $(".keyLogin").css({
-                    display:"none"
-                });
+                    $(".keySignup").css({
+                        display:"none"
+                    });
 
-                $(".keySignup").css({
-                    display:"none"
-                });
+                    $(".keyUsername").css({
+                        display:"block"
+                    });
 
-                $(".keyUsername").css({
-                    display:"block"
-                });
+                    $(".keyLogout").css({
+                        display:"block"
+                    });
 
-                $(".keyLogout").css({
-                    display:"block"
-                });
+                }
+                renderUserName(username);
 
-            }
-            renderUserName(username);
-
-        });
+            });
 
 
     </script>
+</body>
+</html>
+
+

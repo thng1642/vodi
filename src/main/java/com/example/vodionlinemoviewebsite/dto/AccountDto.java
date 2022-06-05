@@ -1,7 +1,13 @@
 package com.example.vodionlinemoviewebsite.dto;
 
+import com.example.vodionlinemoviewebsite.error.EmailNotExisted;
+import com.example.vodionlinemoviewebsite.error.EmailValidation;
+import com.example.vodionlinemoviewebsite.error.PasswordValidation;
+
+@PasswordValidation
 public class AccountDto {
 
+    @EmailValidation // signup
     private String email;
     private String password;
 

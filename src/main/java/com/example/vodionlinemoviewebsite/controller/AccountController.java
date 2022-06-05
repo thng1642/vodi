@@ -23,7 +23,7 @@ public class AccountController {
             BindingResult bindingResult,
             HttpServletResponse response) {
 
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasFieldErrors()) {
 
             System.out.println("Error!");
             return "html/home/index";
@@ -62,6 +62,6 @@ public class AccountController {
         Cookie cookie = new Cookie("name", name);
         response.addCookie(cookie);
 
-        return "html/home/index";
+        return "redirect:/";
     }
 }

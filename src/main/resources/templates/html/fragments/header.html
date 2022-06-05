@@ -495,39 +495,30 @@
 <!-- ========== END HEADER ========== -->
 
     <script>
-            $(document).on('ready', function () {
+        const username = localStorage.getItem("username");
+        const renderUsername = (item) => {
+            $(".usernameCookie").text(item);     
 
-                const username = document.cookie;
-                console.log(username);
-                const renderUserName = (item) => {
-                    $(".usernameCookie").text(item);     
+            $(".keyLogin").css({
+                display:"none"
+            });
 
-                    $(".keyLogin").css({
-                        display:"none"
-                    });
+            $(".keySignup").css({
+                display:"none"
+            });
 
-                    $(".keySignup").css({
-                        display:"none"
-                    });
+            $(".keyUsername").css({
+                display:"block"
+            });
 
-                    $(".keyUsername").css({
-                        display:"block"
-                    });
-
-                    $(".keyLogout").css({
-                        display:"block"
-                    });
-
-                }
-                renderUserName(username);
-            }
+            $(".keyLogout").css({
+                display:"block"
+            });
         
+        };
+        renderUsername(username);
 
-        });
-      </script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    </script>
       
 </body>
 </html>

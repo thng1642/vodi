@@ -5,15 +5,14 @@ import jakarta.validation.Payload;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = EmailValidator.class)
-public @interface EmailValidation {
+@Constraint(validatedBy = PasswordValidator.class)
+public @interface PasswordValidation {
 
     //error messages
-    public String message() default "Email already! Please again signup.";
-
+    public String message() default "Password or email invalid!";
     //represents group of constraints
     public Class<?>[] groups() default {};
     //represents additional information about annotation

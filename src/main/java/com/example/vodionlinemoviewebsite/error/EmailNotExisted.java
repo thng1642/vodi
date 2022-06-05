@@ -8,11 +8,11 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = EmailValidator.class)
-public @interface EmailValidation {
+@Constraint(validatedBy = NotExistedValidator.class)
+public @interface EmailNotExisted {
 
     //error messages
-    public String message() default "Email already! Please again signup.";
+    public String message() default "Email not already! Please again login.";
 
     //represents group of constraints
     public Class<?>[] groups() default {};

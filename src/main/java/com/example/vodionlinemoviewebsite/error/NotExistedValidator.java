@@ -5,27 +5,19 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class EmailValidator implements ConstraintValidator<EmailValidation, String> {
+public class NotExistedValidator implements ConstraintValidator<EmailNotExisted, String> {
 
     @Autowired
-    private AccountRepository repo;
+    AccountRepository repo;
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
 
         s = s.split(",")[0];
         String userName = repo.findEmail(s);
-        
-        if (userName == null) return true;
 
-        if (userName.isEmpty()) return true;
-        else return false;
+
+        if (userName.isEmpty() || userName == null) return false;
+        else return true;
     }
-
-//    @Override
-//    public void initialize(EmailValidation constraintAnnotation) {
-//        ConstraintValidator.super.initialize(constraintAnnotation);
-//        
-//        constraintAnnotation.
-//    }
 }

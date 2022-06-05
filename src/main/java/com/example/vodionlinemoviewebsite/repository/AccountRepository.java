@@ -13,4 +13,8 @@ public interface AccountRepository extends JpaRepository<AccountModel, Integer> 
     @Query(value = "INSERT INTO account (userName, password) values(?1, ?2)",
             nativeQuery = true)
     void insertNewAccount(String email, String password);
+
+    @Query(value = "SELECT userName FROM account WHERE userName = ?1",
+            nativeQuery = true)
+    String findEmail(String userName);
 }

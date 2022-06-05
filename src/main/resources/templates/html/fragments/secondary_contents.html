@@ -146,10 +146,11 @@
                             <!-- Input Group -->
                             <div class="js-form-message mb-4">
                                 <label class="input-label">User Name</label>
-                                <div class="input-group input-group-sm mb-2">
+                                <div class="input-group input-group-sm mb-2" style="display:flex; flex-direction:column; color:red;">
                                     <input type="text" class="form-control" name="userName" id="signUpUserName" placeholder="User Name" aria-label="User Name" required
                                            data-msg="Please enter a valid user name."
                                             th:field="*{email}">
+                                    <p th:if="${#fields.hasErrors('email')}" th:errorclass="error-email" th:errors="*{email}"/>
                                 </div>
                             </div>
                             <!-- End Input Group -->
